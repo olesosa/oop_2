@@ -1,4 +1,4 @@
-﻿public class Program
+public class Program
 {
     static void Main(string[] args)
     {
@@ -12,16 +12,26 @@
         {
             for (int j = 0; j < n; j++)
             {
-                array[i, j] = rnd.Next(-10, 10);
+                array[i, j] = rnd.Next(-10, 11);
                 Console.Write("\t" + array[i, j]);
             }
             Console.WriteLine();
         }
 
+        for(int i = 0; i<n; i++)
+        {
+            for(int j=0; j<n; j++)
+            {
+                if (array[i, j] == array[j, i])
+                {
+                    Console.Write(i + "" + j + " ");
+                }
+            }
+        }
+
         int[] sum = new int[n];
         for (int i = 0; i < n; i++)
         {
-            int k = i;
             for (int j = 0; j < n; j++)
             {
                 if (array[i, j] < 0)
